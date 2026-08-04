@@ -1,4 +1,5 @@
 #include "../include/csr.h"
+#include "../include/bfs.h"
 
 int main()
 {
@@ -15,6 +16,10 @@ int main()
     cout << "\nSource vertex: "
          << source
          << endl;
+
+    BFS(graph, source);
+
+    
 
     return 0;
 }
