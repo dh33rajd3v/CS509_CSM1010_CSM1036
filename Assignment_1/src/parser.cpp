@@ -1,8 +1,9 @@
+#include "../include/parser.h"
 #include "../include/csr.h"
 #include "../include/bfs.h"
 #include "../include/dfs.h"
 
-int main()
+void run_BFS()
 {
     int source;
 
@@ -14,13 +15,20 @@ int main()
 
     printCSR(graph);
 
-    cout << "\nSource vertex: "
-         << source
-         << endl;
-
     BFS(graph, source);
+}
+
+void run_DFS()
+{
+    int source;
+
+    CSRGraph graph =
+        readGraph(
+            "tests/bfs_10.txt",
+            source
+        );
+
+    printCSR(graph);
 
     DFS(graph, source);
-
-    return 0;
 }
