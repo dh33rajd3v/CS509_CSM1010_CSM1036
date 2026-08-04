@@ -1,8 +1,8 @@
 #include "../include/graph.h"
 
 Graph readGraph(
-    const string& filename,
-    int& source)
+    const string &filename,
+    int &source)
 {
     ifstream inputFile(filename);
 
@@ -10,7 +10,7 @@ Graph readGraph(
 
     if (!inputFile)
     {
-        cerr << "Unable to open file.\n";
+        cerr << "Unable to open file." << endl;
         exit(1);
     }
 
@@ -27,15 +27,13 @@ Graph readGraph(
 
         inputFile >> vertex >> degree;
 
-        for (int j = 0; j < degree; j++)
+        for (const auto &edge : graph.adjacencyList[i])
         {
-            int neighbour;
-
-            inputFile >> neighbour;
-
-            graph.adjacencyList[vertex].push_back(
-                neighbour
-            );
+            cout << "("
+                 << edge.first
+                 << ", "
+                 << edge.second
+                 << ") ";
         }
     }
 
@@ -48,8 +46,7 @@ Graph readGraph(
     return graph;
 }
 
-void printGraph(
-    const Graph& graph)
+void printGraph(const Graph& graph)
 {
     cout << "\nAdjacency List\n\n";
 
@@ -57,10 +54,13 @@ void printGraph(
     {
         cout << i << " -> ";
 
-        for (int neighbour :
-             graph.adjacencyList[i])
+        for (const auto& edge : graph.adjacencyList[i])
         {
-            cout << neighbour << " ";
+            cout << "("
+                 << edge.first
+                 << ", "
+                 << edge.second
+                 << ") ";
         }
 
         cout << endl;

@@ -1,5 +1,5 @@
-#ifndef GRAPH_H
-#define GRAPH_H
+#ifndef CSR_H
+#define CSR_H
 
 #include <iostream>
 #include <fstream>
@@ -8,21 +8,22 @@
 
 using namespace std;
 
-struct Graph
+struct CSRGraph
 {
     int vertices;
     int edges;
 
-    vector<vector<pair<int, int>>> adjacencyList;
+    vector<int> row_ptr;
+    vector<int> col_idx;
 };
 
-Graph readGraph(
+CSRGraph readGraph(
     const string& filename,
     int& source
 );
 
-void printGraph(
-    const Graph& graph
+void printCSR(
+    const CSRGraph& graph
 );
 
 #endif

@@ -1,16 +1,16 @@
-#include "../include/graph.h"
+#include "../include/csr.h"
 
 int main()
 {
     int source;
 
-    Graph graph =
+    CSRGraph graph =
         readGraph(
             "tests/bfs_10.txt",
             source
         );
 
-    printGraph(graph);
+    printCSR(graph);
 
     cout << "\nSource vertex: "
          << source
