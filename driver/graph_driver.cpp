@@ -1,5 +1,6 @@
 #include "../include/csr.h"
 #include "../include/bfs.h"
+#include "../include/dfs.h"
 
 int main()
 {
@@ -19,7 +20,7 @@ int main()
 
     BFS(graph, source);
 
-    
+    DFS(graph, source);
 
     return 0;
 }
