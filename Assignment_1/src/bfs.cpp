@@ -1,4 +1,5 @@
 #include "../include/bfs.h"
+#include <chrono>
 
 #include <iostream>
 #include <queue>
@@ -7,6 +8,7 @@ using namespace std;
 
 void BFS(const CSRGraph& graph, int source)
 {
+    auto start = chrono::high_resolution_clock::now();
     vector<bool> visited(graph.vertices, false);
     vector<int> distance(graph.vertices, -1);
     vector<int> traversal;
@@ -37,7 +39,10 @@ void BFS(const CSRGraph& graph, int source)
         }
     }
 
-    cout << "Algorithm: BFS\n";
+    auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
+
+    cout << "\nAlgorithm: BFS\n";
     cout << "Source: " << source << "\n";
 
     cout << "Traversal: ";
@@ -55,4 +60,5 @@ void BFS(const CSRGraph& graph, int source)
             cout << distance[i];
         cout << '\n';
     }
+    cout<<"Execution time: "<<duration<<endl; 
 }

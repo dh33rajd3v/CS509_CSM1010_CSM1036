@@ -1,4 +1,5 @@
 #include "../include/dfs.h"
+#include <chrono>
 
 #include <iostream>
 
@@ -36,6 +37,7 @@ void DFS(
     const CSRGraph& graph,
     int source)
 {
+    auto start = chrono::high_resolution_clock::now();
     vector<bool> visited(
         graph.vertices,
         false
@@ -50,6 +52,9 @@ void DFS(
         traversal
     );
 
+    auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
+
     cout << "Algorithm: DFS\n";
 
     cout << "Source: "
@@ -62,6 +67,8 @@ void DFS(
     {
         cout << vertex << " ";
     }
+
+    cout<<"\nExecution time: "<<duration<<endl; 
 
     cout << endl;
 }

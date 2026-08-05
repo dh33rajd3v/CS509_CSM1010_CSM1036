@@ -4,12 +4,14 @@
 #include <limits>
 #include <functional>
 #include <iomanip>
+#include <chrono>
 
 using namespace std;
 
 void SSSP(
     const CSRGraph_withWeight& graph, int source)
 {
+    auto start = chrono::high_resolution_clock::now();
     const int INFINITY = numeric_limits<int>::max();
     vector<int> distances(graph.vertices, INFINITY);
 
@@ -48,6 +50,8 @@ void SSSP(
             }
         }
     }
+    auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
 
     cout << "Algorithm: SSSP\n";
     cout << "Source: " << source << "\n\n";
@@ -63,4 +67,5 @@ void SSSP(
         else
             cout << distances[i] << "\n";
     }
+    cout<<"\nExecution time: "<<duration<<endl; 
 }
