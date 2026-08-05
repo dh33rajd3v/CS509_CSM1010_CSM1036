@@ -31,6 +31,10 @@ int main()
                 run_DFS();
                 break;
 
+            case 3:
+                run_SSSP();
+                break;
+
             case 0:
                 cout << "Exiting...\n";
                 break;
