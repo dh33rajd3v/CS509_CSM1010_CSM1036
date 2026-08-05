@@ -10,7 +10,7 @@ void run_BFS()
 
     CSRGraph graph =
         readGraph(
-            "tests/bfs_10.txt",
+            "Assignment_1/tests/bfs_10.txt",
             source
         );
 
@@ -23,7 +23,7 @@ void run_DFS()
 
     CSRGraph graph =
         readGraph(
-            "tests/bfs_10.txt",
+            "Assignment_1/tests/bfs_10.txt",
             source
         );
 
@@ -36,7 +36,7 @@ void run_SSSP()
 
     CSRGraph_withWeight graph =
         readGraph_withWeight(
-            "tests/sssp_10.txt",
+            "Assignment_1/tests/sssp_10.txt",
             source
         );
 

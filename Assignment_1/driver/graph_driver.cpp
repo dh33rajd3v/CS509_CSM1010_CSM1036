@@ -1,12 +1,8 @@
-#include "../include/parser.h"
-#include "../include/bfs.h"
-#include "../include/dfs.h"
-
-#include <iostream>
+#include "../include/graph_driver.h"
 
 using namespace std;
 
-int main()
+void driver_func()
 {
     int choice;
 
@@ -45,5 +41,4 @@ int main()
 
     } while (choice != 0);
 
-    return 0;
 }

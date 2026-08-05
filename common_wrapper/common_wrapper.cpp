@@ -1,16 +1,8 @@
 #include <iostream>
 #include <cstdlib>
+#include "../Assignment_1/include/graph_driver.h"
 
 using namespace std;
-
-void run_assignment1()
-{
-#ifdef _WIN32
-    system("cd ..\\Assignment_1 && graph.exe");
-#else
-    system("cd ../Assignment_1 && ./graph");
-#endif
-}
 
 int main()
 {
@@ -28,7 +20,7 @@ int main()
         switch (choice)
         {
             case 1:
-                run_assignment1();
+                driver_func();
                 break;
 
             case 0:
