@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <tuple>
 #include <algorithm>
 #include <chrono>
 #include "csr.h"
@@ -15,7 +16,7 @@ void run_triangle()
 
     CSRGraph graph =
         readGraph(
-            "tests/triangle_counting/triangle.txt",
+            "tests/triangle_counting/tc_100000.txt",
             source
         );
 
@@ -69,7 +70,7 @@ void run_triangle()
     );
 
     auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);
 
     cout << "Algorithm: Triangle Counting" << endl;
     cout << "Total triangles: "
@@ -90,5 +91,8 @@ void run_triangle()
              << c << ")"
              << endl;
     }
-    cout<<"\nExecution time: "<<duration.count()<<endl; 
+    cout << "\nExecution time: "
+     << duration.count()
+     << " ms"
+     << endl;
 }
