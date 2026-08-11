@@ -44,7 +44,10 @@ CSRGraph readGraph(
 
     string label;
 
-    inputFile >> label >> source;
+    if (!(inputFile >> label >> source))
+    {
+        source = -1;
+    }
 
     inputFile.close();
 
