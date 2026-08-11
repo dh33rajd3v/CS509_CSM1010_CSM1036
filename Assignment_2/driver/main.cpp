@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../include/triangle_counting.h"
 #include "../include/betweenness_centrality.h"
+#include "../include/connected_components.h"
 
 #include "csr.h"
 
@@ -10,9 +11,13 @@ int main()
 {
     cout << "CSR infrastructure connected successfully." << endl;
 
-    cout << "\n 1. Triangle Counting Problem\n 2. Betweenness Centrality Problem\n\n" << endl;
+    cout << "\n 1. Triangle Counting Problem"
+         << "\n 2. Betweenness Centrality Problem"
+         << "\n 3. Connected Components Problem"
+         << "\n\n";
+
     int choice;
-    cin>>choice;
+    cin >> choice;
 
     switch (choice)
     {
@@ -23,8 +28,13 @@ int main()
     case 2:
         betweennessCentrality();
         break;
-    
+
+    case 3:
+        run_connected_components();
+        break;
+
     default:
+        cout << "Invalid choice." << endl;
         break;
     }
 
