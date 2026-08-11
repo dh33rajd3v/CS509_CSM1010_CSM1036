@@ -1,11 +1,7 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <tuple>
-#include <algorithm>
-#include <chrono>
-#include "csr.h"
+
+#include "../../Assignment_1/include/csr.h"
+#include "../include/triangle_counting.h"
+#include <filesystem>
 
 using namespace std;
 
@@ -14,9 +10,51 @@ void run_triangle()
 {
     int source;
 
+    const string directory = "Assignment_2/tests/triangle_counting";
+
+    vector<string> files;
+
+    for (const auto& entry : filesystem::directory_iterator(directory))
+    {
+        if (entry.is_regular_file())
+        {
+            files.push_back(entry.path().filename().string());
+        }
+    }
+
+    if (files.empty())
+    {
+        cerr << "No files found in " << directory << endl;
+        return;
+    }
+
+    sort(files.begin(), files.end());
+
+    cout << "\nSelect a graph file:\n";
+
+    for (size_t i = 0; i < files.size(); ++i)
+    {
+        cout << i + 1 << ". " << files[i] << '\n';
+    }
+
+    int choice;
+
+    cout << "\n\nEnter choice: ";
+    cin >> choice;
+
+    if (choice < 1 || choice > static_cast<int>(files.size()))
+    {
+        cerr << "Invalid choice.\n";
+        return;
+    }
+
+    string selected_file =
+        directory + "/" + files[choice - 1];
+
+
     CSRGraph graph =
         readGraph(
-            "tests/triangle_counting/tc_100000.txt",
+            selected_file,
             source
         );
 

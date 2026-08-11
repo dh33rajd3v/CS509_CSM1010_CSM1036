@@ -1,20 +1,21 @@
 #include <iostream>
 #include "../include/triangle_counting.h"
 #include "../include/betweenness_centrality.h"
+#include "../include/graph_driver.h"
 #include "../include/connected_components.h"
 
-#include "csr.h"
+#include "../../Assignment_1/include/csr.h"
 
 using namespace std;
 
-int main()
+void assignment_2_func()
 {
-    cout << "CSR infrastructure connected successfully." << endl;
+    // cout << "CSR infrastructure connected successfully." << endl;
 
     cout << "\n 1. Triangle Counting Problem"
          << "\n 2. Betweenness Centrality Problem"
          << "\n 3. Connected Components Problem"
-         << "\n\n";
+         << "\n\n Enter your choice: ";
 
     int choice;
     cin >> choice;
@@ -37,6 +38,4 @@ int main()
         cout << "Invalid choice." << endl;
         break;
     }
-
-    return 0;
 }

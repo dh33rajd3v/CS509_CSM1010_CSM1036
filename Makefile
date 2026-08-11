@@ -15,7 +15,11 @@ SRCS = \
 	Assignment_1/src/dfs.cpp \
 	Assignment_1/src/parser.cpp \
 	Assignment_1/src/sssp.cpp \
-	Assignment_1/driver/graph_driver.cpp
+	Assignment_1/driver/graph_driver.cpp \
+	Assignment_2/src/betweenness_centrality.cpp \
+	Assignment_2/src/connected_components.cpp \
+	Assignment_2/src/triangle_counting.cpp \
+	Assignment_2/driver/graph_driver.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
