@@ -40,43 +40,6 @@ A common wrapper program is provided to allow all assignments to be executed thr
 
 ---
 
-## Repository Structure
-
-```text
-CS509_CSM1010_CSM1036/
-│
-├── Assignment_1/
-│   │
-│   ├── driver/
-│   │   └── graph_driver.cpp
-│   │
-│   ├── include/
-│   │   ├── bfs.h
-│   │   ├── csr.h
-│   │   ├── dfs.h
-│   │   ├── parser.h
-│   │   └── sssp.h
-│   │
-│   ├── src/
-│   │   ├── bfs.cpp
-│   │   ├── csr.cpp
-│   │   ├── dfs.cpp
-│   │   └── sssp.cpp
-│   │
-│   ├── tests/
-│   │   ├── bfs_10.txt
-│   │
-│   │
-│   └── graph.exe
-│
-├── common_wrapper/
-│   └── common_wrapper.cpp
-│
-└── README.md
-```
-
----
-
 ## Assignment Directory Structure
 
 Each assignment contains the following subdirectories:
@@ -120,6 +83,7 @@ g++ common_wrapper/common_wrapper.cpp -o common_wrapper.exe
 ===== CS509 LAB WRAPPER =====
 
 1. Assignment 1
+2. Assignment 2
 0. Exit
 
 Enter your choice:
@@ -135,42 +99,13 @@ Enter your choice:
 - Depth-First Search (DFS)
 - Single-Source Shortest Path (SSSP)
 
----
+# Assignment 2
 
-### Compilation
+### Topics Covered
 
-Move into the assignment directory:
-
-```bash
-cd Assignment_1
-```
-
-Compile the project:
-
-```bash
-g++ driver/graph_driver.cpp src/csr.cpp src/bfs.cpp src/dfs.cpp -o graph.exe
-```
-
----
-
-### Execution
-
-```powershell
-.\graph.exe
-```
-
----
-
-### Assignment Menu
-
-```text
-===== ASSIGNMENT 1 =====
-
-1. BFS
-2. DFS
-3. SSSP
-0. Exit
-```
+- Triangle Counting
+- Between Centrality
+- Connected Components
 
 ---
 
