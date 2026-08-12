@@ -52,6 +52,8 @@ void betweennessCentrality()
             source
         );
 
+    auto start = chrono::high_resolution_clock::now();
+
     int V = graph.vertices;
 
     vector<double> CB(V, 0.0);
@@ -129,6 +131,9 @@ void betweennessCentrality()
         CB[v] /= 2.0;
     }
 
+    auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
+
     cout << fixed << setprecision(2);
 
     cout << "Algorithm: Betweenness Centrality" << endl;
@@ -138,4 +143,9 @@ void betweennessCentrality()
     {
         cout << v << "      " << CB[v] << endl;
     }
+
+    cout << "\nExecution time: "
+     << duration.count()
+     << " * 10^-3 ms"
+     << endl;
 }
