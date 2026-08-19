@@ -20,6 +20,9 @@ void assignment_3_func()
 
     switch (choice)
     {
+    case 1:
+        gd_func();
+        break;
     
 
     default:

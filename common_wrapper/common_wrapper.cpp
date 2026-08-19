@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include "../Assignment_1/include/graph_driver.h"
 #include "../Assignment_2/include/graph_driver.h"
+#include "../Assignment_3/include/graph_driver.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ int main()
         cout << "\n===== CS509 LAB WRAPPER =====\n";
         cout << "1. Assignment 1\n";
         cout << "2. Assignment 2\n";
+        cout << "3. Assignment 3\n";
         cout << "0. Exit\n\n";
 
         cout << "Enter your choice: ";
@@ -27,6 +29,10 @@ int main()
 
             case 2:
                 assignment_2_func();
+                break;
+
+            case 3:
+                assignment_3_func();
                 break;
 
             case 0:
