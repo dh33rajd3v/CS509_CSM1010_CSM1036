@@ -19,7 +19,10 @@ SRCS = \
 	Assignment_2/src/betweenness_centrality.cpp \
 	Assignment_2/src/connected_components.cpp \
 	Assignment_2/src/triangle_counting.cpp \
-	Assignment_2/driver/graph_driver.cpp
+	Assignment_2/driver/graph_driver.cpp \
+	Assignment_3/src/gradient_descent.cpp \
+	Assignment_3/src/maxflow.cpp \
+	Assignment_3/driver/graph_driver.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
