@@ -23,6 +23,7 @@ void assignment_3_func()
 
     case 2:
         mm_fn();
+        break;
 
     default:
         cout << "Invalid choice." << endl;

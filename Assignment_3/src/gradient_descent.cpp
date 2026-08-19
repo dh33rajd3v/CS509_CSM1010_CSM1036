@@ -28,7 +28,50 @@ double evaluateDerivative(const vector<double>& c, int degree, double x)
 
 void gd_func()
 {
-    ifstream input("Assignment_3/tests/gd/gd_01.txt");
+
+    const string directory = "Assignment_3/tests/gd";
+
+    vector<string> files;
+
+    for (const auto& entry : filesystem::directory_iterator(directory))
+    {
+        if (entry.is_regular_file())
+        {
+            files.push_back(entry.path().filename().string());
+        }
+    }
+
+    if (files.empty())
+    {
+        cerr << "No files found in " << directory << endl;
+        return;
+    }
+
+    sort(files.begin(), files.end());
+
+    cout << "\nSelect a graph file:\n";
+
+    for (size_t i = 0; i < files.size(); ++i)
+    {
+        cout << i + 1 << ". " << files[i] << '\n';
+    }
+
+    int choice;
+
+    cout << "\n\nEnter choice: ";
+    cin >> choice;
+
+    if (choice < 1 || choice > static_cast<int>(files.size()))
+    {
+        cerr << "Invalid choice.\n";
+        return;
+    }
+
+    string selected_file =
+        directory + "/" + files[choice - 1];
+
+
+    ifstream input(selected_file);
 
     if (!input)
     {
